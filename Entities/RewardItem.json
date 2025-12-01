@@ -1,0 +1,47 @@
+{
+  "name": "RewardItem",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Reward item name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Reward item description"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Reward item image"
+    },
+    "points_cost": {
+      "type": "number",
+      "description": "Points required to redeem"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "product",
+        "merchandise",
+        "coupon",
+        "gift"
+      ],
+      "description": "Type of reward"
+    },
+    "stock_quantity": {
+      "type": "number",
+      "description": "Available quantity",
+      "default": 0
+    },
+    "is_available": {
+      "type": "boolean",
+      "description": "Whether item is currently available",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "points_cost",
+    "category"
+  ]
+}
