@@ -1,0 +1,42 @@
+{
+  "name": "PointsTransaction",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User associated with this transaction"
+    },
+    "points_amount": {
+      "type": "number",
+      "description": "Points amount (positive for earning, negative for spending)"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "earned",
+        "redeemed",
+        "expired",
+        "bonus"
+      ],
+      "description": "Type of transaction"
+    },
+    "description": {
+      "type": "string",
+      "description": "Transaction description"
+    },
+    "related_purchase_id": {
+      "type": "string",
+      "description": "Related purchase ID if applicable"
+    },
+    "related_reward_id": {
+      "type": "string",
+      "description": "Related reward item ID if redeemed"
+    }
+  },
+  "required": [
+    "user_email",
+    "points_amount",
+    "transaction_type",
+    "description"
+  ]
+}
