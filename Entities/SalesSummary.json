@@ -1,0 +1,46 @@
+{
+  "name": "SalesSummary",
+  "type": "object",
+  "properties": {
+    "machine_id": {
+      "type": "string",
+      "description": "Vending machine ID"
+    },
+    "product_id": {
+      "type": "string",
+      "description": "Product ID"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Product name for quick reference"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Sales date (YYYY-MM-DD)"
+    },
+    "total_quantity_sold": {
+      "type": "number",
+      "description": "Total units sold on this date",
+      "default": 0
+    },
+    "total_revenue": {
+      "type": "number",
+      "description": "Total revenue generated",
+      "default": 0
+    },
+    "peak_hour": {
+      "type": "number",
+      "description": "Hour of day with most sales (0-23)"
+    },
+    "average_price": {
+      "type": "number",
+      "description": "Average selling price"
+    }
+  },
+  "required": [
+    "machine_id",
+    "product_id",
+    "date"
+  ]
+}
