@@ -1,0 +1,72 @@
+{
+  "name": "WalletTransaction",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User associated with transaction"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "recharge",
+        "purchase",
+        "refund",
+        "bonus",
+        "withdrawal"
+      ],
+      "description": "Type of wallet transaction"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Transaction amount in yuan"
+    },
+    "bonus_amount": {
+      "type": "number",
+      "description": "Bonus amount received (for recharges)",
+      "default": 0
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "alipay",
+        "wechat",
+        "credit_card",
+        "balance"
+      ],
+      "description": "Payment method used"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "completed",
+        "failed",
+        "cancelled"
+      ],
+      "default": "completed",
+      "description": "Transaction status"
+    },
+    "related_order_id": {
+      "type": "string",
+      "description": "Related purchase order ID if applicable"
+    },
+    "note": {
+      "type": "string",
+      "description": "Transaction notes or description"
+    },
+    "balance_before": {
+      "type": "number",
+      "description": "Wallet balance before transaction"
+    },
+    "balance_after": {
+      "type": "number",
+      "description": "Wallet balance after transaction"
+    }
+  },
+  "required": [
+    "user_email",
+    "transaction_type",
+    "amount"
+  ]
+}
