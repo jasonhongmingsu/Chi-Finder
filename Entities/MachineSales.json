@@ -1,0 +1,54 @@
+{
+  "name": "MachineSales",
+  "type": "object",
+  "properties": {
+    "machine_id": {
+      "type": "string",
+      "description": "Vending machine ID"
+    },
+    "machine_name": {
+      "type": "string",
+      "description": "Machine name for reference"
+    },
+    "product_id": {
+      "type": "string",
+      "description": "Product sold"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "quantity_sold": {
+      "type": "number",
+      "description": "Quantity sold in this transaction",
+      "default": 1
+    },
+    "sale_price": {
+      "type": "number",
+      "description": "Price at time of sale"
+    },
+    "revenue": {
+      "type": "number",
+      "description": "Total revenue from this sale"
+    },
+    "hour_of_day": {
+      "type": "number",
+      "description": "Hour when sale occurred (0-23)"
+    },
+    "day_of_week": {
+      "type": "number",
+      "description": "Day of week (0=Sunday, 6=Saturday)"
+    },
+    "sale_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Exact time of sale"
+    }
+  },
+  "required": [
+    "machine_id",
+    "product_id",
+    "quantity_sold",
+    "sale_price"
+  ]
+}
