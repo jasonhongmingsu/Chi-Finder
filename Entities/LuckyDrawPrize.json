@@ -1,0 +1,47 @@
+{
+  "name": "LuckyDrawPrize",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Prize name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Prize description"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Prize image"
+    },
+    "prize_type": {
+      "type": "string",
+      "enum": [
+        "product",
+        "points",
+        "coupon",
+        "discount"
+      ],
+      "description": "Type of prize"
+    },
+    "prize_value": {
+      "type": "string",
+      "description": "Prize value description (e.g., '100 points', '\u00a520 discount')"
+    },
+    "probability": {
+      "type": "number",
+      "description": "Win probability percentage",
+      "default": 10
+    },
+    "is_active": {
+      "type": "boolean",
+      "description": "Whether prize is active in draws",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "prize_type",
+    "prize_value"
+  ]
+}
