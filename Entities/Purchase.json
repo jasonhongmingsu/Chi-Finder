@@ -1,0 +1,78 @@
+{
+  "name": "Purchase",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User who made the purchase"
+    },
+    "products": {
+      "type": "array",
+      "description": "Products in this purchase",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "total_amount": {
+      "type": "number",
+      "description": "Total purchase amount"
+    },
+    "purchase_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time of purchase"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "processing",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "completed",
+      "description": "Order status"
+    },
+    "purchase_type": {
+      "type": "string",
+      "enum": [
+        "vending",
+        "delivery"
+      ],
+      "description": "Type of purchase"
+    },
+    "vending_machine_id": {
+      "type": "string",
+      "description": "ID of vending machine if purchased from machine"
+    },
+    "delivery_address": {
+      "type": "string",
+      "description": "Delivery address for online orders"
+    },
+    "points_earned": {
+      "type": "number",
+      "description": "Points earned from this purchase",
+      "default": 0
+    }
+  },
+  "required": [
+    "user_email",
+    "products",
+    "total_amount",
+    "purchase_type"
+  ]
+}
