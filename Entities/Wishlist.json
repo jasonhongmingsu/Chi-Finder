@@ -1,0 +1,39 @@
+{
+  "name": "Wishlist",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User who added item to wishlist"
+    },
+    "product_id": {
+      "type": "string",
+      "description": "Product that was wishlisted"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Name of the product"
+    },
+    "product_image": {
+      "type": "string",
+      "description": "Product image URL"
+    },
+    "product_price": {
+      "type": "number",
+      "description": "Product price"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Optional reason for wishlisting (e.g., 'Not available nearby')"
+    },
+    "nearest_machine_distance": {
+      "type": "number",
+      "description": "Distance to nearest machine with this product (in km)"
+    }
+  },
+  "required": [
+    "user_email",
+    "product_id",
+    "product_name"
+  ]
+}
