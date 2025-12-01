@@ -1,0 +1,71 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Product image URL"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in yuan"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "sparkling_water",
+        "tea",
+        "juice",
+        "energy_drink",
+        "snacks"
+      ],
+      "description": "Product category"
+    },
+    "points_value": {
+      "type": "number",
+      "description": "Points earned when purchasing this product",
+      "default": 10
+    },
+    "flavor": {
+      "type": "string",
+      "description": "Flavor or variant"
+    },
+    "size": {
+      "type": "string",
+      "description": "Product size (e.g., 500ml)"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Stock Keeping Unit / Product code"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Product tags (e.g., sugar-free, organic)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nutritional_highlights": {
+      "type": "string",
+      "description": "Key nutritional information"
+    },
+    "is_active": {
+      "type": "boolean",
+      "description": "Whether product is available for sale",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}
