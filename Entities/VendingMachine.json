@@ -1,0 +1,67 @@
+{
+  "name": "VendingMachine",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name/ID of the vending machine"
+    },
+    "address": {
+      "type": "string",
+      "description": "Full address of the machine location"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "GPS latitude coordinate"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "GPS longitude coordinate"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "maintenance",
+        "offline"
+      ],
+      "default": "active",
+      "description": "Current operational status"
+    },
+    "products_inventory": {
+      "type": "array",
+      "description": "Products currently in stock",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "slot_number": {
+            "type": "string"
+          },
+          "low_stock_threshold": {
+            "type": "number",
+            "default": 5
+          },
+          "is_on_shelf": {
+            "type": "boolean",
+            "default": true
+          },
+          "promo_tag": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "address",
+    "latitude",
+    "longitude"
+  ]
+}
