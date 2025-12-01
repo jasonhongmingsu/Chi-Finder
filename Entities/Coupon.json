@@ -1,0 +1,63 @@
+{
+  "name": "Coupon",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User who owns this coupon"
+    },
+    "code": {
+      "type": "string",
+      "description": "Coupon code"
+    },
+    "title": {
+      "type": "string",
+      "description": "Coupon title/name"
+    },
+    "discount_amount": {
+      "type": "number",
+      "description": "Discount value"
+    },
+    "discount_type": {
+      "type": "string",
+      "enum": [
+        "percentage",
+        "fixed"
+      ],
+      "description": "Type of discount"
+    },
+    "min_purchase": {
+      "type": "number",
+      "description": "Minimum purchase amount to use coupon",
+      "default": 0
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Expiration date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "used",
+        "expired"
+      ],
+      "default": "active",
+      "description": "Coupon status"
+    },
+    "used_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date when coupon was used"
+    }
+  },
+  "required": [
+    "user_email",
+    "code",
+    "title",
+    "discount_amount",
+    "discount_type",
+    "expiry_date"
+  ]
+}
