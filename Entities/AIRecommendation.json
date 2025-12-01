@@ -1,0 +1,99 @@
+{
+  "name": "AIRecommendation",
+  "type": "object",
+  "properties": {
+    "machine_id": {
+      "type": "string",
+      "description": "Target vending machine"
+    },
+    "machine_name": {
+      "type": "string",
+      "description": "Machine name for display"
+    },
+    "recommendation_type": {
+      "type": "string",
+      "enum": [
+        "add",
+        "remove",
+        "restock",
+        "replace",
+        "optimize"
+      ],
+      "description": "Type of recommendation"
+    },
+    "product_id": {
+      "type": "string",
+      "description": "Product being recommended for action"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "suggested_quantity": {
+      "type": "number",
+      "description": "Recommended stock quantity"
+    },
+    "replacement_product_id": {
+      "type": "string",
+      "description": "Suggested replacement product (if type is replace)"
+    },
+    "replacement_product_name": {
+      "type": "string",
+      "description": "Replacement product name"
+    },
+    "reason": {
+      "type": "string",
+      "description": "AI-generated explanation for recommendation"
+    },
+    "confidence_score": {
+      "type": "number",
+      "description": "Confidence level (0-100)",
+      "default": 0
+    },
+    "expected_impact": {
+      "type": "string",
+      "description": "Predicted business impact"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "urgent"
+      ],
+      "default": "medium",
+      "description": "Action priority"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "applied"
+      ],
+      "default": "pending",
+      "description": "Recommendation status"
+    },
+    "applied_by": {
+      "type": "string",
+      "description": "Admin who applied the recommendation"
+    },
+    "applied_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When recommendation was applied"
+    },
+    "ai_model_version": {
+      "type": "string",
+      "description": "AI model version that generated this",
+      "default": "gpt-4"
+    }
+  },
+  "required": [
+    "machine_id",
+    "recommendation_type",
+    "reason"
+  ]
+}
