@@ -1,0 +1,67 @@
+{
+  "name": "ActivityLog",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User or admin email"
+    },
+    "user_role": {
+      "type": "string",
+      "enum": [
+        "user",
+        "admin"
+      ],
+      "description": "Role of the person performing action"
+    },
+    "activity_type": {
+      "type": "string",
+      "enum": [
+        "login",
+        "purchase",
+        "recharge",
+        "lucky_draw",
+        "coupon_used",
+        "machine_restock",
+        "inventory_update",
+        "ai_recommendation_applied",
+        "ai_recommendation_rejected",
+        "product_added",
+        "product_removed",
+        "machine_status_change"
+      ],
+      "description": "Type of activity"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed activity description"
+    },
+    "related_entity_id": {
+      "type": "string",
+      "description": "ID of related entity (product, machine, order, etc.)"
+    },
+    "related_entity_type": {
+      "type": "string",
+      "description": "Type of related entity"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional contextual data as JSON",
+      "additionalProperties": true
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "IP address of request"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Activity timestamp"
+    }
+  },
+  "required": [
+    "user_email",
+    "activity_type",
+    "description"
+  ]
+}
