@@ -1,0 +1,38 @@
+{
+  "name": "LuckyDrawHistory",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User who participated in draw"
+    },
+    "prize_id": {
+      "type": "string",
+      "description": "Prize won"
+    },
+    "prize_name": {
+      "type": "string",
+      "description": "Name of prize won"
+    },
+    "prize_value": {
+      "type": "string",
+      "description": "Value of prize"
+    },
+    "points_spent": {
+      "type": "number",
+      "description": "Points spent on this draw",
+      "default": 50
+    },
+    "draw_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date of draw"
+    }
+  },
+  "required": [
+    "user_email",
+    "prize_name",
+    "prize_value",
+    "points_spent"
+  ]
+}
